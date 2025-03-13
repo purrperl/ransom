@@ -13,6 +13,10 @@ function updateText() {
     outputArea.html('');
     
     for (let char of text) {
+        if ( char === "\n" ) {
+            outputArea.child("<BR/>\n");
+            return;
+        }
         const span = createSpan(char);
         span.style('font-family', getRandomFont());
         span.style('font-size', getRandomSize() + 'px');
